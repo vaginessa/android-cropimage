@@ -6,7 +6,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.12.+'
+        classpath 'com.android.tools.build:gradle:0.13.2'
     }
 }
 
@@ -27,12 +27,6 @@ android {
 //
 // Publishing
 //
-
-configurations {
-    archives {
-        extendsFrom configurations.default
-    }
-}
 
 repositories {
     flatDir {
