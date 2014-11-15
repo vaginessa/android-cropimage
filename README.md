@@ -3,6 +3,7 @@
 <img src="https://cdn.rawgit.com/lvillani/android-cropimage/f55253d2be3e6c28a06dd8bdd1e45aa7fd0b22a1/logo.svg" align="right" width="200" height="200"/>
 
 [![License](http://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://choosealicense.com/licenses/apache-2.0/)
+[![Paid Support](http://img.shields.io/badge/paid_support-available-brightgreen.svg?style=flat)](lorenzo@villani.me)
 
 --------------------------------------------------------------------------------
 
@@ -52,9 +53,7 @@ compile 'me.villani.lorenzo.android:android-cropimage:1.0.1'
 ```
 
 
-## Donating
+## Paid Support
 
-Support this project and [others by Lorenzo Villani](https://github.com/lvillani/) via
-[gittip](https://www.gittip.com/lvillani/).
-
-[![Support via Gittip](https://cdn.rawgit.com/lvillani/gittip-badge/v1.0.0/dist/gittip.svg)](https://www.gittip.com/lvillani/)
+I offer part-time paid support to work on extra features and services (such as publishing on Maven
+Central). Request a quote by shooting me an email to <lorenzo@villani.me>.
