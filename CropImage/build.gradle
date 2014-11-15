@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
-
-version = '1.0.1'
+apply plugin: 'maven'
 
 buildscript {
     repositories {
@@ -30,15 +29,13 @@ android {
 // Publishing
 //
 
-repositories {
-    flatDir {
-        name "fileRepo"
-        dirs "../repo"
-    }
-}
-
 uploadArchives {
     repositories {
-        add project.repositories.fileRepo
+        mavenDeployer {
+            repository(url: "file://repo")
+            pom.groupId = 'me.villani.lorenzo.android'
+            pom.artifactId = 'android-cropimage'
+            pom.version = '1.0.1'
+        }
     }
 }

@@ -2,8 +2,7 @@
 
 <img src="https://cdn.rawgit.com/lvillani/android-cropimage/f55253d2be3e6c28a06dd8bdd1e45aa7fd0b22a1/logo.svg" align="right" width="200" height="200"/>
 
-[![Gittip](http://img.shields.io/gittip/lvillani.svg)](https://www.gittip.com/lvillani/)
-[![License](http://img.shields.io/badge/license-Apache%202.0-blue.svg)](http://choosealicense.com/licenses/apache-2.0/)
+[![License](http://img.shields.io/badge/license-Apache%202.0-blue.svg?style=flat)](http://choosealicense.com/licenses/apache-2.0/)
 
 --------------------------------------------------------------------------------
 
@@ -26,6 +25,31 @@ for a type-safe interface.
 ## Example Project
 
 It is contained inside the `CropImageExample` module.
+
+
+## Gradle/Maven Repository
+
+There's a [Gradle/Maven repository](https://github.com/lvillani/android-cropimage/tree/gh-pages)
+available at <http://lorenzo.villani.me/android-cropimage/>.
+
+In your top-level `build.gradle` add the address of the Maven repository to the `repositories`
+section so that it looks like:
+
+```groovy
+repositories {
+    mavenCentral()
+
+    maven {
+        url 'http://lorenzo.villani.me/android-cropimage/'
+    }
+}
+```
+
+Then add the dependency to your `dependencies` section:
+
+```groovy
+compile 'me.villani.lorenzo.android:android-cropimage:1.0.1'
+```
 
 
 ## Donating
