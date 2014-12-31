@@ -56,9 +56,9 @@ public class CropImageIntentBuilder {
     private boolean doFaceDetection = true;
     private boolean circleCrop = false;
     private String outputFormat = null;
+    private int outputQuality = 100;
     private Uri sourceImage;
     private Bitmap bitmap;
-    private int outputQuality;
 
     private final int aspectX;
     private final int aspectY;
