@@ -28,10 +28,10 @@ for a type-safe interface.
 It is contained inside the `CropImageExample` module.
 
 
-## Gradle/Maven Repository
+## Gradle Repository
 
-There's a [Gradle/Maven repository](https://github.com/lvillani/android-cropimage/tree/gh-pages)
-available at <http://lorenzo.villani.me/android-cropimage/>.
+There's a [Gradle repository](http://lorenzo.villani.me/android-cropimage/) available at
+<http://lorenzo.villani.me/android-cropimage/>.
 
 In your top-level `build.gradle` add the address of the Maven repository to the `repositories`
 section so that it looks like:
@@ -51,6 +51,9 @@ Then add the dependency to your `dependencies` section:
 ```groovy
 compile 'me.villani.lorenzo.android:android-cropimage:1.0.2'
 ```
+
+For more information see the `CropImageRepo` example (the project doesn't do anything, it only shows
+how to pull the dependency through Gradle).
 
 
 ## Paid Support
