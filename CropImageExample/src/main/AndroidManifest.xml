@@ -3,6 +3,8 @@
     package="com.android.camera.example"
     android:versionCode="1"
     android:versionName="1.0.0" >
+    
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-sdk
         android:minSdkVersion="15"
