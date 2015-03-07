@@ -87,6 +87,9 @@ public class CropImage extends MonitoredActivity {
     private IImageList mAllImages;
     private IImage mImage;
 
+    private int mOutlineColor;
+    private int mOutlineCircleColor;
+
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
@@ -134,6 +137,8 @@ public class CropImage extends MonitoredActivity {
             mAspectY = extras.getInt("aspectY");
             mOutputX = extras.getInt("outputX");
             mOutputY = extras.getInt("outputY");
+            mOutlineColor = extras.getInt("outlineColor", HighlightView.DEFAULT_OUTLINE_COLOR);
+            mOutlineCircleColor = extras.getInt("outlineCircleColor", HighlightView.DEFAULT_OUTLINE_CIRCLE_COLOR);
             mScale = extras.getBoolean("scale", true);
             mScaleUp = extras.getBoolean("scaleUpIfNeeded", true);
             mDoFaceDetection = extras.containsKey("noFaceDetection")
@@ -443,7 +448,7 @@ public class CropImage extends MonitoredActivity {
             int midX = (int) midPoint.x;
             int midY = (int) midPoint.y;
 
-            HighlightView hv = new HighlightView(mImageView);
+            HighlightView hv = new HighlightView(mImageView, mOutlineColor, mOutlineCircleColor);
 
             int width = mBitmap.getWidth();
             int height = mBitmap.getHeight();
@@ -478,7 +483,7 @@ public class CropImage extends MonitoredActivity {
 
         // Create a default HightlightView if we found no face in the picture.
         private void makeDefault() {
-            HighlightView hv = new HighlightView(mImageView);
+            HighlightView hv = new HighlightView(mImageView, mOutlineColor, mOutlineCircleColor);
 
             int width = mBitmap.getWidth();
             int height = mBitmap.getHeight();

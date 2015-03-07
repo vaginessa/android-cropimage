@@ -33,6 +33,8 @@ import android.view.View;
 // image, another is screen. computeLayout() uses mMatrix to map from image
 // space to screen space.
 class HighlightView {
+    public static final int DEFAULT_OUTLINE_COLOR = 0xFFFF8A00;
+    public static final int DEFAULT_OUTLINE_CIRCLE_COLOR = 0xFFEF04D6;
 
     @SuppressWarnings("unused")
     private static final String TAG = "HighlightView";
@@ -45,8 +47,17 @@ class HighlightView {
     public static final int GROW_BOTTOM_EDGE = (1 << 4);
     public static final int MOVE             = (1 << 5);
 
+    private final int mOutlineColor;
+    private final int mOutlineCircleColor;
+
     public HighlightView(View ctx) {
+        this(ctx, DEFAULT_OUTLINE_COLOR, DEFAULT_OUTLINE_CIRCLE_COLOR);
+    }
+
+    public HighlightView(View ctx, int outlineColor, int outlineCircleColor) {
         mContext = ctx;
+        mOutlineColor = outlineColor;
+        mOutlineCircleColor = outlineCircleColor;
     }
 
     private void init() {
@@ -93,10 +104,10 @@ class HighlightView {
                                mDrawRect.top + (height / 2),
                                width / 2,
                                Path.Direction.CW);
-                mOutlinePaint.setColor(0xFFEF04D6);
+                mOutlinePaint.setColor(mOutlineCircleColor);
             } else {
                 path.addRect(new RectF(mDrawRect), Path.Direction.CW);
-                mOutlinePaint.setColor(0xFFFF8A00);
+                mOutlinePaint.setColor(mOutlineColor);
             }
             canvas.clipPath(path, Region.Op.DIFFERENCE);
             canvas.drawRect(viewDrawingRect,

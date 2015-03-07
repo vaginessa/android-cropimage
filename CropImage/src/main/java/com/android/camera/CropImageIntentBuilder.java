@@ -48,6 +48,8 @@ public class CropImageIntentBuilder {
     private static final String EXTRA_CIRCLE_CROP = "circleCrop";
     private static final String EXTRA_OUTPUT_FORMAT = "outputFormat";
     private static final String EXTRA_OUTPUT_QUALITY = "outputQuality";
+    private static final String EXTRA_OUTLINE_COLOR = "outlineColor";
+    private static final String EXTRA_OUTLINE_CIRCLE_COLOR = "outlineCircleColor";
 
     private static final int DEFAULT_SCALE = 1;
 
@@ -59,6 +61,8 @@ public class CropImageIntentBuilder {
     private int outputQuality = 100;
     private Uri sourceImage;
     private Bitmap bitmap;
+    private int outlineColor = HighlightView.DEFAULT_OUTLINE_COLOR;
+    private int outlineCircleColor = HighlightView.DEFAULT_OUTLINE_CIRCLE_COLOR;
 
     private final int aspectX;
     private final int aspectY;
@@ -136,6 +140,8 @@ public class CropImageIntentBuilder {
         intent.putExtra(EXTRA_CIRCLE_CROP, this.circleCrop);
         intent.putExtra(EXTRA_OUTPUT_FORMAT, this.outputFormat);
         intent.putExtra(EXTRA_OUTPUT_QUALITY, this.outputQuality);
+        intent.putExtra(EXTRA_OUTLINE_COLOR, this.outlineColor);
+        intent.putExtra(EXTRA_OUTLINE_CIRCLE_COLOR, this.outlineCircleColor);
 
         if (this.bitmap != null) {
             intent.putExtra(EXTRA_BITMAP_DATA, this.bitmap);
@@ -258,6 +264,32 @@ public class CropImageIntentBuilder {
      */
     public CropImageIntentBuilder setOutputFormat(final String outputFormat) {
         this.outputFormat = outputFormat;
+
+        return this;
+    }
+
+    /**
+     * Set the color for the standard outline.
+     *
+     * @param color The color to use.
+     * @return This Builder object to allow for chaining of calls to set methods.
+     * @since 1.1.0
+     */
+    public CropImageIntentBuilder setOutlineColor(int color) {
+        this.outlineColor = color;
+
+        return this;
+    }
+
+    /**
+     * Set the color for the face detection outline.
+     *
+     * @param color The color to use.
+     * @return This Builder object to allow for chaining of calls to set methods.
+     * @since 1.1.0
+     */
+    public CropImageIntentBuilder setOutlineCircleColor(int color) {
+        this.outlineCircleColor = color;
 
         return this;
     }

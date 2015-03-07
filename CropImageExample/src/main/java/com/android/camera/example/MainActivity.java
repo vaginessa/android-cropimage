@@ -60,6 +60,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Uri croppedImage = Uri.fromFile(croppedImageFile);
 
             CropImageIntentBuilder cropImage = new CropImageIntentBuilder(200, 200, croppedImage);
+            cropImage.setOutlineColor(0xFF03A9F4);
             cropImage.setSourceImage(data.getData());
 
             startActivityForResult(cropImage.getIntent(this), REQUEST_CROP_PICTURE);
