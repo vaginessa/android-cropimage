@@ -48,7 +48,7 @@ repositories {
 Then add the dependency to your `dependencies` section:
 
 ```groovy
-compile 'me.villani.lorenzo.android:android-cropimage:1.1.0'
+compile 'me.villani.lorenzo.android:android-cropimage:1.1.+'
 ```
 
 For more information see the `CropImageRepo` example (the project doesn't do anything, it only shows
